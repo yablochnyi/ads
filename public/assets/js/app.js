@@ -63,7 +63,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		$('#reset').addClass('modal--active');
 	});
 
-
 	$('.btn--reg').on('click', function(e) {
 		e.preventDefault();
 		$('#auth').removeClass('modal--active');
@@ -80,9 +79,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		e.preventDefault();
 		$(this).closest('.modal').removeClass('modal--active');
 	});
-
-    //close modal button
-
 
 	$('.modal__overlay').on('click', function(e) {
 		e.preventDefault();
@@ -103,22 +99,26 @@ document.addEventListener('DOMContentLoaded', () => {
 		$(this).closest('.modal__form-select').toggleClass('modal__form-select--active');
 	});
 
+
+
 	const phoneMask = {
 		ru: '+7 (999) 999-99-99',
 		ua: '+38 (099) 999-99-99',
 		tr: '+\\90 (999) 999-99-99',
 	}
-	$('.modal__form-select__list li').on('click', function(e) {
-		e.preventDefault();
-		const country = $(this).data('country');
-		const mask = $(this).data('mask');
-		const select = $(this).closest('.modal__form-select');
-		const input = $(this).closest('.modal__form-select').parent().find('.phone-input');
-		select.find('.modal__form-select__current img').attr('src', `images/icons/flag/${country}.svg`);
-		select.find('.modal__form-select__current span').text(mask);
-		select.removeClass('modal__form-select--active');
-		input.inputmask(phoneMask[country]);
-	});
+
+    $('.modal__form-select__list li').on('click', function(e) {
+        e.preventDefault();
+        const country = $(this).data('country') || 'ru';
+        const mask = $(this).data('mask') || phoneMask.ru;
+        const select = $(this).closest('.modal__form-select');
+        const input = $(this).closest('.modal__form-select').parent().find('.phone-input');
+        select.find('.modal__form-select__current img').attr('src', `images/icons/flag/${country}.svg`);
+        select.find('.modal__form-select__current span').text(mask);
+        select.removeClass('modal__form-select--active');
+        input.inputmask(phoneMask[country]);
+        input.trigger('input'); // Add this line
+    });
 
 	$('.card__more-btn').on('click', function(e) {
 		e.preventDefault();
@@ -198,18 +198,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		$(`${id}`).addClass('tab__item--active');
 	});
 
-	$('.category__box a').on('click', function(e) {
-		e.preventDefault();
-		const sibling = $(this).closest('.category__box').next('.category__box');
-
-		if (sibling.length > 0) {
-			return sibling.addClass('category__box--active')
-		}
-
-		$('.category__select').hide();
-		$('.category__page').show();
-	});
-
 	$('.chat__show').on('click', function(e) {
 		e.preventDefault();
 		$(this).toggleClass('chat__show--active');
@@ -232,4 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 
 	$(".phone-input").inputmask("+7 (999) 999-99-99");
+
+
+
 });

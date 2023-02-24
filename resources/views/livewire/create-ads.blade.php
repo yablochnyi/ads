@@ -4,25 +4,27 @@
             <h2 class="title">Категория</h2>
             <div class="category__wrap">
                 <ul class="category__box category__box--active">
-                    @foreach($categories as $category)
-                        <li><a href="#">{{$category->title}}</a></li>
-                    @endforeach
+                    <li><a href="#">Транспорт</a></li>
+                    <li><a href="#">Недвижимость</a></li>
+                    <li><a href="#">Работа</a></li>
+                    <li><a href="#">Услуги</a></li>
+                    <li><a href="#">Личные вещи</a></li>
+                    <li><a href="#">Работа</a></li>
+                    <li><a href="#">Услуги</a></li>
+                    <li><a href="#">Личные вещи</a></li>
                 </ul>
                 <ul class="category__box">
-                    @foreach($categories as $category)
-                        @foreach($category->subcategories as $subcategories)
-                            <li><a href="#">{{$subcategories->title}}</a></li>
-                        @endforeach
-                    @endforeach
+                    <li><a href="#">Транспорт</a></li>
+                    <li><a href="#">Недвижимость</a></li>
+                    <li><a href="#">Работа</a></li>
+                    <li><a href="#">Услуги</a></li>
+                    <li><a href="#">Личные вещи</a></li>
+                    <li><a href="#">Работа</a></li>
                 </ul>
                 <ul class="category__box">
-                    @foreach($categories as $category)
-                        @foreach($category->subcategories as $subcategories)
-                            @foreach($subcategories->subcategories as $subsubcategories)
-                                <li><a href="#">{{$subsubcategories->title}}</a></li>
-                            @endforeach
-                        @endforeach
-                    @endforeach
+                    <li><a href="#">Транспорт</a></li>
+                    <li><a href="#">Недвижимость</a></li>
+                    <li><a href="#">Работа</a></li>
                 </ul>
             </div>
         </div>

@@ -6,62 +6,62 @@
             @endforeach
         </div>
         <div class="promo">
-            <div class="promo__cards">
-                <a href="#" class="promo__card">
-                    <span>Card title</span>
-                    <img src="{{asset('assets/images/card.jpg')}}" alt="card" class="promo__card-image">
-                </a>
-                <a href="#" class="promo__card">
-                    <span>Card title</span>
-                    <img src="{{asset('assets/images/card.jpg')}}" alt="card" class="promo__card-image">
-                </a>
-                <a href="#" class="promo__card">
-                    <span>Card title</span>
-                    <img src="{{asset('assets/images/card.jpg')}}" alt="card" class="promo__card-image">
-                </a>
-                <a href="#" class="promo__card">
-                    <span>Card title</span>
-                    <img src="{{asset('assets/images/card.jpg')}}" alt="card" class="promo__card-image">
-                </a>
-                <a href="#" class="promo__card">
-                    <span>Card title</span>
-                    <img src="{{asset('assets/images/card.jpg')}}" alt="card" class="promo__card-image">
-                </a>
-                <a href="#" class="promo__card">
-                    <span>Card title</span>
-                    <img src="{{asset('assets/images/card.jpg')}}" alt="card" class="promo__card-image">
-                </a>
-            </div>
-            <div class="promo__cards promo__cards--mini">
-                <a href="#" class="promo__card">
-                    <span>Card title</span>
-                    <img src="{{asset('assets/images/card.jpg')}}" alt="card" class="promo__card-image">
-                </a>
-                <a href="#" class="promo__card">
-                    <span>Card title</span>
-                    <img src="{{asset('assets/images/card.jpg')}}" alt="card" class="promo__card-image">
-                </a>
-                <a href="#" class="promo__card">
-                    <span>Card title</span>
-                    <img src="{{asset('assets/images/card.jpg')}}" alt="card" class="promo__card-image">
-                </a>
-                <a href="#" class="promo__card">
-                    <span>Card title</span>
-                    <img src="{{asset('assets/images/card.jpg')}}" alt="card" class="promo__card-image">
-                </a>
-                <a href="#" class="promo__card">
-                    <span>Card title</span>
-                    <img src="{{asset('assets/images/card.jpg')}}" alt="card" class="promo__card-image">
-                </a>
-                <a href="#" class="promo__card">
-                    <span>Card title</span>
-                    <img src="{{asset('assets/images/card.jpg')}}" alt="card" class="promo__card-image">
-                </a>
-                <a href="#" class="promo__card">
-                    <span>Card title</span>
-                    <img src="{{asset('assets/images/card.jpg')}}" alt="card" class="promo__card-image">
-                </a>
-            </div>
+{{--            <div class="promo__cards">--}}
+{{--                <a href="#" class="promo__card">--}}
+{{--                    <span>Card title</span>--}}
+{{--                    <img src="{{asset('assets/images/card.jpg')}}" alt="card" class="promo__card-image">--}}
+{{--                </a>--}}
+{{--                <a href="#" class="promo__card">--}}
+{{--                    <span>Card title</span>--}}
+{{--                    <img src="{{asset('assets/images/card.jpg')}}" alt="card" class="promo__card-image">--}}
+{{--                </a>--}}
+{{--                <a href="#" class="promo__card">--}}
+{{--                    <span>Card title</span>--}}
+{{--                    <img src="{{asset('assets/images/card.jpg')}}" alt="card" class="promo__card-image">--}}
+{{--                </a>--}}
+{{--                <a href="#" class="promo__card">--}}
+{{--                    <span>Card title</span>--}}
+{{--                    <img src="{{asset('assets/images/card.jpg')}}" alt="card" class="promo__card-image">--}}
+{{--                </a>--}}
+{{--                <a href="#" class="promo__card">--}}
+{{--                    <span>Card title</span>--}}
+{{--                    <img src="{{asset('assets/images/card.jpg')}}" alt="card" class="promo__card-image">--}}
+{{--                </a>--}}
+{{--                <a href="#" class="promo__card">--}}
+{{--                    <span>Card title</span>--}}
+{{--                    <img src="{{asset('assets/images/card.jpg')}}" alt="card" class="promo__card-image">--}}
+{{--                </a>--}}
+{{--            </div>--}}
+{{--            <div class="promo__cards promo__cards--mini">--}}
+{{--                <a href="#" class="promo__card">--}}
+{{--                    <span>Card title</span>--}}
+{{--                    <img src="{{asset('assets/images/card.jpg')}}" alt="card" class="promo__card-image">--}}
+{{--                </a>--}}
+{{--                <a href="#" class="promo__card">--}}
+{{--                    <span>Card title</span>--}}
+{{--                    <img src="{{asset('assets/images/card.jpg')}}" alt="card" class="promo__card-image">--}}
+{{--                </a>--}}
+{{--                <a href="#" class="promo__card">--}}
+{{--                    <span>Card title</span>--}}
+{{--                    <img src="{{asset('assets/images/card.jpg')}}" alt="card" class="promo__card-image">--}}
+{{--                </a>--}}
+{{--                <a href="#" class="promo__card">--}}
+{{--                    <span>Card title</span>--}}
+{{--                    <img src="{{asset('assets/images/card.jpg')}}" alt="card" class="promo__card-image">--}}
+{{--                </a>--}}
+{{--                <a href="#" class="promo__card">--}}
+{{--                    <span>Card title</span>--}}
+{{--                    <img src="{{asset('assets/images/card.jpg')}}" alt="card" class="promo__card-image">--}}
+{{--                </a>--}}
+{{--                <a href="#" class="promo__card">--}}
+{{--                    <span>Card title</span>--}}
+{{--                    <img src="{{asset('assets/images/card.jpg')}}" alt="card" class="promo__card-image">--}}
+{{--                </a>--}}
+{{--                <a href="#" class="promo__card">--}}
+{{--                    <span>Card title</span>--}}
+{{--                    <img src="{{asset('assets/images/card.jpg')}}" alt="card" class="promo__card-image">--}}
+{{--                </a>--}}
+{{--            </div>--}}
             <div class="promo__slider">
                 <div class="promo__slider-wrap swiper">
                     <div class="swiper-wrapper">
@@ -124,11 +124,11 @@
                 <h2 class="subtitle">Рекомендации для вас</h2>
                 <div class="cards">
                     <div class="card">
-                        <a href="#" class="card__image">
+                        <a href="{{route('ads')}}" class="card__image">
                             <img src="{{asset('assets/images/product.jpg')}}" alt="product">
                         </a>
                         <div class="card__body">
-                            <a href="#" class="card__title">Айфон</a>
+                            <a href="{{route('ads')}}" class="card__title">Айфон</a>
                             <p class="card__price">70 000</p>
                             <p class="card__city">Санкт-Петербург</p>
                             <p class="card__time">Сегодня 16:12</p>
@@ -150,11 +150,11 @@
                         </div>
                     </div>
                     <div class="card">
-                        <a href="#" class="card__image">
+                        <a href="{{route('ads')}}" class="card__image">
                             <img src="{{asset('assets/images/product.jpg')}}" alt="product">
                         </a>
                         <div class="card__body">
-                            <a href="#" class="card__title">Айфон</a>
+                            <a href="{{route('ads')}}" class="card__title">Айфон</a>
                             <p class="card__price">70 000</p>
                             <p class="card__city">Санкт-Петербург</p>
                             <p class="card__time">Сегодня 16:12</p>
@@ -176,11 +176,11 @@
                         </div>
                     </div>
                     <div class="card">
-                        <a href="#" class="card__image">
+                        <a href="{{route('ads')}}" class="card__image">
                             <img src="{{asset('assets/images/product.jpg')}}" alt="product">
                         </a>
                         <div class="card__body">
-                            <a href="#" class="card__title">Айфон</a>
+                            <a href="{{route('ads')}}" class="card__title">Айфон</a>
                             <p class="card__price">70 000</p>
                             <p class="card__city">Санкт-Петербург</p>
                             <p class="card__time">Сегодня 16:12</p>
@@ -202,11 +202,11 @@
                         </div>
                     </div>
                     <div class="card">
-                        <a href="#" class="card__image">
+                        <a href="{{route('ads')}}" class="card__image">
                             <img src="{{asset('assets/images/product.jpg')}}" alt="product">
                         </a>
                         <div class="card__body">
-                            <a href="#" class="card__title">Айфон</a>
+                            <a href="{{route('ads')}}" class="card__title">Айфон</a>
                             <p class="card__price">70 000</p>
                             <p class="card__city">Санкт-Петербург</p>
                             <p class="card__time">Сегодня 16:12</p>
@@ -228,11 +228,11 @@
                         </div>
                     </div>
                     <div class="card">
-                        <a href="#" class="card__image">
+                        <a href="{{route('ads')}}" class="card__image">
                             <img src="{{asset('assets/images/product.jpg')}}" alt="product">
                         </a>
                         <div class="card__body">
-                            <a href="#" class="card__title">Айфон</a>
+                            <a href="{{route('ads')}}" class="card__title">Айфон</a>
                             <p class="card__price">70 000</p>
                             <p class="card__city">Санкт-Петербург</p>
                             <p class="card__time">Сегодня 16:12</p>
@@ -254,11 +254,11 @@
                         </div>
                     </div>
                     <div class="card">
-                        <a href="#" class="card__image">
+                        <a href="{{route('ads')}}" class="card__image">
                             <img src="{{asset('assets/images/product.jpg')}}" alt="product">
                         </a>
                         <div class="card__body">
-                            <a href="#" class="card__title">Айфон</a>
+                            <a href="{{route('ads')}}" class="card__title">Айфон</a>
                             <p class="card__price">70 000</p>
                             <p class="card__city">Санкт-Петербург</p>
                             <p class="card__time">Сегодня 16:12</p>

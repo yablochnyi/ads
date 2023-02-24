@@ -16,9 +16,17 @@ class Auth extends Component
             'password' => ['required', 'string'],
         ];
     }
+    protected $listeners = ['phoneUpdated'];
+
+    public function phoneUpdated($value)
+    {
+
+        $this->phone = $value;
+    }
 
     public function login()
     {
+
         if (\Illuminate\Support\Facades\Auth::attempt($this->validate())) {
             Session::regenerate(true);
             return redirect()->route('index');

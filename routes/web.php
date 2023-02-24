@@ -23,3 +23,5 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/create/ads', \App\Http\Livewire\CreateAds::class)->name('create.ads');
     });
 
+Route::get('/ads', \App\Http\Livewire\Ads::class)->name('ads');
+

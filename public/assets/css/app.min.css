@@ -1509,7 +1509,7 @@ a:focus {
   color: #000;
 }
 .categories__link:hover {
-  color: #FF6163;
+  color: darkred;
   background: #e0e0e0;
 }
 
@@ -1570,7 +1570,7 @@ a:focus {
   position: relative;
 }
 .card__title {
-  color: #00AAFF;
+  color: black;
   font-size: 16px;
   line-height: 24px;
   font-weight: 700;
@@ -1579,7 +1579,7 @@ a:focus {
   color: #00AAFF;
 }
 .card__title:hover {
-  color: #FF6163;
+  color: darkred;
 }
 .card__price {
   color: #212529;
@@ -2969,7 +2969,7 @@ a:focus {
   line-height: 28px;
   padding: 4px 12px;
   border-radius: 3px;
-  background: #02d15c;
+  background: darkred;
   cursor: pointer;
   margin-bottom: 12px;
 }
@@ -2982,13 +2982,13 @@ a:focus {
   line-height: 20px;
 }
 .product__btn:hover {
-  background: #00c257;
+  background: #450202;
 }
-.product__btn--blue {
-  background: #00AAFF;
+.product__btn--black {
+  background: black;
 }
-.product__btn--blue:hover {
-  background: #009CF0;
+.product__btn--black:hover {
+  background: darkred;
 }
 .product__docs {
   background: rgb(230, 246, 255);
@@ -3249,16 +3249,18 @@ a:focus {
   width: 100%;
 }
 .category__box {
-    background: #fff;
-    border: 1px solid #d8d8d8;
-    padding-bottom: 10px;
-    width: 25%;
-    -ms-flex-negative: 0;
-    flex-shrink: 0;
-    margin-left: -1px;
+  background: #fff;
+  border: 1px solid #d8d8d8;
+  padding-bottom: 10px;
+  width: 25%;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  list-style: none;
+  margin-left: -1px;
+  display: none;
 }
-.category__box ul {
-    list-style: none;
+.category__box--active {
+  display: block;
 }
 .category__box li a {
   font-size: 14px;
