@@ -2,7 +2,7 @@
     <div class="container">
         <div class="categories">
             @foreach($categories as $category)
-            <a href="#" class="categories__link">{{$category->title}}</a>
+            <a href="{{route('category', $category)}}" class="categories__link">{{$category->title}}</a>
             @endforeach
         </div>
         <div class="promo">
@@ -123,162 +123,34 @@
             <div class="recommendation">
                 <h2 class="subtitle">Рекомендации для вас</h2>
                 <div class="cards">
+                    @foreach($ads as $ad)
                     <div class="card">
-                        <a href="{{route('ads')}}" class="card__image">
-                            <img src="{{asset('assets/images/product.jpg')}}" alt="product">
+                        <a href="{{route('ads', $ad)}}" class="card__image">
+                            <img src="{{ asset('storage/ads/' . optional($ad->images->first())->image) }}" alt="{{$ad->title}}">
                         </a>
                         <div class="card__body">
-                            <a href="{{route('ads')}}" class="card__title">Айфон</a>
-                            <p class="card__price">70 000</p>
+                            <a href="{{route('ads', $ad)}}" class="card__title">{{$ad->title}}</a>
+                            <p class="card__price">{{$ad->price}} ₽</p>
                             <p class="card__city">Санкт-Петербург</p>
-                            <p class="card__time">Сегодня 16:12</p>
-                            <div class="card__btns">
-                                <button class="card__favorite"></button>
-                                <div class="card__more">
-                                    <button class="card__more-btn">•••</button>
-                                    <div class="card__tooltip">
-                                        <i></i>
-                                        <h4 class="card__tooltip-title">Скрыть рекомендацию</h4>
-                                        <div class="card__tooltip-list">
-                                            <button>Не интересует это объявление</button>
-                                            <button>Не интересует эта категория</button>
-                                            <button>Не подходит город или регион</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <p class="card__time">{{$ad->created_at->diffForHumans()}}</p>
+{{--                            <div class="card__btns">--}}
+{{--                                <button class="card__favorite"></button>--}}
+{{--                                <div class="card__more">--}}
+{{--                                    <button class="card__more-btn">•••</button>--}}
+{{--                                    <div class="card__tooltip">--}}
+{{--                                        <i></i>--}}
+{{--                                        <h4 class="card__tooltip-title">Скрыть рекомендацию</h4>--}}
+{{--                                        <div class="card__tooltip-list">--}}
+{{--                                            <button>Не интересует это объявление</button>--}}
+{{--                                            <button>Не интересует эта категория</button>--}}
+{{--                                            <button>Не подходит город или регион</button>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
                         </div>
                     </div>
-                    <div class="card">
-                        <a href="{{route('ads')}}" class="card__image">
-                            <img src="{{asset('assets/images/product.jpg')}}" alt="product">
-                        </a>
-                        <div class="card__body">
-                            <a href="{{route('ads')}}" class="card__title">Айфон</a>
-                            <p class="card__price">70 000</p>
-                            <p class="card__city">Санкт-Петербург</p>
-                            <p class="card__time">Сегодня 16:12</p>
-                            <div class="card__btns">
-                                <button class="card__favorite"></button>
-                                <div class="card__more">
-                                    <button class="card__more-btn">•••</button>
-                                    <div class="card__tooltip">
-                                        <i></i>
-                                        <h4 class="card__tooltip-title">Скрыть рекомендацию</h4>
-                                        <div class="card__tooltip-list">
-                                            <button>Не интересует это объявление</button>
-                                            <button>Не интересует эта категория</button>
-                                            <button>Не подходит город или регион</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <a href="{{route('ads')}}" class="card__image">
-                            <img src="{{asset('assets/images/product.jpg')}}" alt="product">
-                        </a>
-                        <div class="card__body">
-                            <a href="{{route('ads')}}" class="card__title">Айфон</a>
-                            <p class="card__price">70 000</p>
-                            <p class="card__city">Санкт-Петербург</p>
-                            <p class="card__time">Сегодня 16:12</p>
-                            <div class="card__btns">
-                                <button class="card__favorite"></button>
-                                <div class="card__more">
-                                    <button class="card__more-btn">•••</button>
-                                    <div class="card__tooltip">
-                                        <i></i>
-                                        <h4 class="card__tooltip-title">Скрыть рекомендацию</h4>
-                                        <div class="card__tooltip-list">
-                                            <button>Не интересует это объявление</button>
-                                            <button>Не интересует эта категория</button>
-                                            <button>Не подходит город или регион</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <a href="{{route('ads')}}" class="card__image">
-                            <img src="{{asset('assets/images/product.jpg')}}" alt="product">
-                        </a>
-                        <div class="card__body">
-                            <a href="{{route('ads')}}" class="card__title">Айфон</a>
-                            <p class="card__price">70 000</p>
-                            <p class="card__city">Санкт-Петербург</p>
-                            <p class="card__time">Сегодня 16:12</p>
-                            <div class="card__btns">
-                                <button class="card__favorite"></button>
-                                <div class="card__more">
-                                    <button class="card__more-btn">•••</button>
-                                    <div class="card__tooltip">
-                                        <i></i>
-                                        <h4 class="card__tooltip-title">Скрыть рекомендацию</h4>
-                                        <div class="card__tooltip-list">
-                                            <button>Не интересует это объявление</button>
-                                            <button>Не интересует эта категория</button>
-                                            <button>Не подходит город или регион</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <a href="{{route('ads')}}" class="card__image">
-                            <img src="{{asset('assets/images/product.jpg')}}" alt="product">
-                        </a>
-                        <div class="card__body">
-                            <a href="{{route('ads')}}" class="card__title">Айфон</a>
-                            <p class="card__price">70 000</p>
-                            <p class="card__city">Санкт-Петербург</p>
-                            <p class="card__time">Сегодня 16:12</p>
-                            <div class="card__btns">
-                                <button class="card__favorite"></button>
-                                <div class="card__more">
-                                    <button class="card__more-btn">•••</button>
-                                    <div class="card__tooltip">
-                                        <i></i>
-                                        <h4 class="card__tooltip-title">Скрыть рекомендацию</h4>
-                                        <div class="card__tooltip-list">
-                                            <button>Не интересует это объявление</button>
-                                            <button>Не интересует эта категория</button>
-                                            <button>Не подходит город или регион</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <a href="{{route('ads')}}" class="card__image">
-                            <img src="{{asset('assets/images/product.jpg')}}" alt="product">
-                        </a>
-                        <div class="card__body">
-                            <a href="{{route('ads')}}" class="card__title">Айфон</a>
-                            <p class="card__price">70 000</p>
-                            <p class="card__city">Санкт-Петербург</p>
-                            <p class="card__time">Сегодня 16:12</p>
-                            <div class="card__btns">
-                                <button class="card__favorite"></button>
-                                <div class="card__more">
-                                    <button class="card__more-btn">•••</button>
-                                    <div class="card__tooltip">
-                                        <i></i>
-                                        <h4 class="card__tooltip-title">Скрыть рекомендацию</h4>
-                                        <div class="card__tooltip-list">
-                                            <button>Не интересует это объявление</button>
-                                            <button>Не интересует эта категория</button>
-                                            <button>Не подходит город или регион</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>

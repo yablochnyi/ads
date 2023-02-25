@@ -10,4 +10,9 @@ class Gallery extends Model
     use HasFactory;
     protected $table = 'galleries';
     protected $fillable = ['ads_id', 'image'];
+
+    public function ads()
+    {
+        return $this->belongsTo(Ads::class);
+    }
 }

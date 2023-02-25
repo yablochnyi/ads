@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		return menuState = !menuState;
 	}
-
+	
 	$('.open-modal').on('click', function(e) {
 		e.preventDefault();
 		const id = $(this).data('modal');
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		e.preventDefault();
 		$(this).closest('.modal').removeClass('modal--active');
 	});
-
+	
 	$('.modal__tab').on('click', function(e) {
 		e.preventDefault();
 		const id = $(this).attr('id').slice(-1);
@@ -99,26 +99,22 @@ document.addEventListener('DOMContentLoaded', () => {
 		$(this).closest('.modal__form-select').toggleClass('modal__form-select--active');
 	});
 
-
-
 	const phoneMask = {
 		ru: '+7 (999) 999-99-99',
 		ua: '+38 (099) 999-99-99',
 		tr: '+\\90 (999) 999-99-99',
 	}
-
-    $('.modal__form-select__list li').on('click', function(e) {
-        e.preventDefault();
-        const country = $(this).data('country') || 'ru';
-        const mask = $(this).data('mask') || phoneMask.ru;
-        const select = $(this).closest('.modal__form-select');
-        const input = $(this).closest('.modal__form-select').parent().find('.phone-input');
-        select.find('.modal__form-select__current img').attr('src', `images/icons/flag/${country}.svg`);
-        select.find('.modal__form-select__current span').text(mask);
-        select.removeClass('modal__form-select--active');
-        input.inputmask(phoneMask[country]);
-        input.trigger('input'); // Add this line
-    });
+	$('.modal__form-select__list li').on('click', function(e) {
+		e.preventDefault();
+		const country = $(this).data('country') || 'ru';
+		const mask = $(this).data('mask') || phoneMask.ru;
+		const select = $(this).closest('.modal__form-select');
+		const input = $(this).closest('.modal__form-select').parent().find('.phone-input');
+		select.find('.modal__form-select__current img').attr('src', `images/icons/flag/${country}.svg`);
+		select.find('.modal__form-select__current span').text(mask);
+		select.removeClass('modal__form-select--active');
+		input.inputmask(phoneMask[country]);
+	});
 
 	$('.card__more-btn').on('click', function(e) {
 		e.preventDefault();
@@ -166,13 +162,13 @@ document.addEventListener('DOMContentLoaded', () => {
 	const productThumbs = new Swiper('.product__thumbs', {
 		spaceBetween: 4,
 		slidesPerView: 8,
-		loop: true,
+		loop: false,
 		watchSlidesProgress: true,
 	});
 
 	const productSlider = new Swiper('.product__gallery-slider-wrap', {
 		slidesPerView: 1,
-		loop: true,
+		loop: false,
 		navigation: {
 			nextEl: '.product__gallery-arrow--next',
 			prevEl: '.product__gallery-arrow--prev',
@@ -220,7 +216,4 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 
 	$(".phone-input").inputmask("+7 (999) 999-99-99");
-
-
-
 });

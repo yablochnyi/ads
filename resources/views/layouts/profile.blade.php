@@ -3,14 +3,11 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Avito</title>
+    <title>Berёm</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="{{asset('assets/css/app.min.css')}}">
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="icon" type="image/x-icon" href="{{ asset('assets/images/favicon.JPG')}}">
     @livewireStyles
 </head>
 
@@ -114,15 +111,15 @@
             <div class="profile__name">{{\Illuminate\Support\Facades\Auth::user()->name}}</div>
             <div class="profile__nav">
                 <div class="profile__nav-box">
-                    <a href="{{route('profile')}}" class="profile__nav-subtitle">Мои объявления</a>
                     <ul class="profile__nav-list">
-                        <li><a href="{{route('message')}}">Сообщения</a></li>
+                        <li> <a href="{{route('profile')}}" class="{{ request()->routeIs('profile') ? 'profile__nav-subtitle' : '' }}">Мои объявления</a> </li>
+                        <li><a href="{{route('message')}}" class="{{ request()->routeIs('message') ? 'profile__nav-subtitle' : '' }}">Сообщения</a></li>
                     </ul>
                 </div>
                 <div class="profile__nav-box">
                     <ul class="profile__nav-list">
-                        <li><a href="{{route('edit')}}">Управление профилем</a></li>
-                        <li><a href="{{route('setting')}}">Настройки</a></li>
+                        <li><a href="{{route('edit')}}" class="{{ request()->routeIs('edit') ? 'profile__nav-subtitle' : '' }}">Управление профилем</a></li>
+                        <li><a href="{{route('setting')}}" class="{{ request()->routeIs('setting') ? 'profile__nav-subtitle' : '' }}">Настройки</a></li>
                     </ul>
                 </div>
             </div>

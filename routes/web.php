@@ -21,7 +21,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/edit', \App\Http\Livewire\Edit::class)->name('edit');
     Route::get('/setting', \App\Http\Livewire\Setting::class)->name('setting');
     Route::get('/create/ads', \App\Http\Livewire\CreateAds::class)->name('create.ads');
+//    Route::get('/edit/{ads}', \App\Http\Livewire\EditAds::class)->name('edit.ads');
     });
 
-Route::get('/ads', \App\Http\Livewire\Ads::class)->name('ads');
+Route::get('/category/{category}', \App\Http\Livewire\Category::class)->name('category');
+Route::get('/search', \App\Http\Livewire\Search::class)->name('search.ads');
+Route::get('/ads/{ads}', \App\Http\Livewire\Ads::class)->name('ads');
 

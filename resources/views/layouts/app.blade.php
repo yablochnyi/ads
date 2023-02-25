@@ -3,14 +3,11 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Avito</title>
+    <title>Berёm</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="{{asset('assets/css/app.min.css')}}">
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="icon" type="image/x-icon" href="{{ asset('assets/images/favicon.JPG')}}">
     @livewireStyles
 </head>
 
@@ -130,16 +127,7 @@
 					</span>
                 Все категории
             </button>
-            <form class="header__form">
-                <input type="text" placeholder="Поиск по объявлениям" class="header__form-search">
-                <button type="button" class="header__select header__city open-modal" data-modal="modal-city">Во всех
-                    регионах
-                </button>
-                <button type="button" class="header__select header__radius open-modal"
-                        data-modal="modal-radius">Радиус / Район
-                </button>
-                <button type="submit" class="btn">Найти</button>
-            </form>
+            <livewire:components.search />
         </div>
     </div>
 </header>
@@ -161,7 +149,7 @@
         <div class="nav__content">
             @foreach($categories as $category)
                 <div class="nav__content-item nav__content-item--active" data-nav-id="{{$category->id}}">
-                    <a href="#" class="nav__content-title">
+                    <a href="{{route('category', $category)}}" class="nav__content-title">
                         <span>{{$category->title}}</span>
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -172,7 +160,7 @@
                     <div class="nav__content-box">
                         @foreach($category->subcategories as $subcategories)
                             <div class="nav__content-group">
-                                <a href="#" class="nav__content-subtitle">
+                                <a href="{{route('category', $subcategories)}}" class="nav__content-subtitle">
                                     <span>{{$subcategories->title}}</span>
                                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
                                          xmlns="http://www.w3.org/2000/svg">
@@ -183,7 +171,7 @@
                                 </a>
                                 <ul class="nav__content-list">
                                     @foreach($subcategories->subcategories as $subsubcategories)
-                                        <li><a href="#">{{$subsubcategories->title}}</a></li>
+                                        <li><a href="{{route('category', $subsubcategories)}}">{{$subsubcategories->title}}</a></li>
                                     @endforeach
                                 </ul>
                             </div>
@@ -195,99 +183,99 @@
     </div>
     <div class="nav__bg"></div>
 </nav>
-<div class="modal" id="modal-radius">
-    <div class="modal__content">
-        <button class="modal__close">
-            <svg role="button" tabindex="0" aria-hidden="false" data-icon="close" viewBox="0 0 24 24" name="close"
-                 data-marker="popup-location/close" class="desktop-89rnpj">
-                <path
-                    d="M18.7 5.3a1 1 0 0 0-1.4 0L12 10.58l-5.3-5.3a1 1 0 0 0-1.4 1.42L10.58 12l-5.3 5.3a1 1 0 1 0 1.42 1.4L12 13.42l5.3 5.3a1 1 0 0 0 1.4-1.42L13.42 12l5.3-5.3a1 1 0 0 0 0-1.4Z">
-                </path>
-            </svg>
-        </button>
-        <div class="modal__tabs">
-            <button class="modal__tab modal__tab--active" id="modal-tab-1">Радиус поиска</button>
-            <button class="modal__tab" id="modal-tab-2">Районы</button>
-        </div>
-        <div class="modal__body">
-            <div class="modal__item modal__item--active" data-modal-tab="1">
-                <input type="text" class="modal__input" placeholder="Улица и номер дома">
-                <div class="modal__map">
-                    <img src="{{asset('assets/images/map.jpg')}}" alt="map">
-                </div>
-                <div class="modal__bottom">
-                    <div class="modal__search">
-                        <p class="modal__search-label">Радиус поиска, км</p>
-                        <div class="modal__search-btns">
-                            <label class="modal__search-km">
-                                <input type="radio" name="radius" value="1">
-                                <span>1</span>
-                            </label>
-                            <label class="modal__search-km">
-                                <input type="radio" name="radius" value="2">
-                                <span>2</span>
-                            </label>
-                            <label class="modal__search-km">
-                                <input type="radio" name="radius" value="3">
-                                <span>3</span>
-                            </label>
-                            <label class="modal__search-km">
-                                <input type="radio" name="radius" value="5">
-                                <span>5</span>
-                            </label>
-                            <label class="modal__search-km">
-                                <input type="radio" name="radius" value="10">
-                                <span>10</span>
-                            </label>
-                            <label class="modal__search-km">
-                                <input type="radio" name="radius" value="15">
-                                <span>15</span>
-                            </label>
-                            <label class="modal__search-km">
-                                <input type="radio" name="radius" value="25">
-                                <span>25</span>
-                            </label>
-                            <label class="modal__search-km">
-                                <input type="radio" name="radius" value="50">
-                                <span>50</span>
-                            </label>
-                            <label class="modal__search-km">
-                                <input type="radio" name="radius" value="100">
-                                <span>100</span>
-                            </label>
-                            <label class="modal__search-km">
-                                <input type="radio" name="radius" value="150">
-                                <span>150</span>
-                            </label>
-                        </div>
-                    </div>
-                    <button class="btn">Показать</button>
-                </div>
-            </div>
-            <div class="modal__item" data-modal-tab="2">
-                <div class="modal__checkboxes">
-                    <label class="modal__checkbox">
-                        <input type="checkbox" name="rayon" value="1">
-                        <span>Кировский</span>
-                    </label>
-                    <label class="modal__checkbox">
-                        <input type="checkbox" name="rayon" value="1">
-                        <span>Кировский</span>
-                    </label>
-                    <label class="modal__checkbox">
-                        <input type="checkbox" name="rayon" value="1">
-                        <span>Кировский</span>
-                    </label>
-                    <label class="modal__checkbox">
-                        <input type="checkbox" name="rayon" value="1">
-                        <span>Кировский</span>
-                    </label>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal__overlay"></div>
-</div>
+{{--<div class="modal" id="modal-radius">--}}
+{{--    <div class="modal__content">--}}
+{{--        <button class="modal__close">--}}
+{{--            <svg role="button" tabindex="0" aria-hidden="false" data-icon="close" viewBox="0 0 24 24" name="close"--}}
+{{--                 data-marker="popup-location/close" class="desktop-89rnpj">--}}
+{{--                <path--}}
+{{--                    d="M18.7 5.3a1 1 0 0 0-1.4 0L12 10.58l-5.3-5.3a1 1 0 0 0-1.4 1.42L10.58 12l-5.3 5.3a1 1 0 1 0 1.42 1.4L12 13.42l5.3 5.3a1 1 0 0 0 1.4-1.42L13.42 12l5.3-5.3a1 1 0 0 0 0-1.4Z">--}}
+{{--                </path>--}}
+{{--            </svg>--}}
+{{--        </button>--}}
+{{--        <div class="modal__tabs">--}}
+{{--            <button class="modal__tab modal__tab--active" id="modal-tab-1">Радиус поиска</button>--}}
+{{--            <button class="modal__tab" id="modal-tab-2">Районы</button>--}}
+{{--        </div>--}}
+{{--        <div class="modal__body">--}}
+{{--            <div class="modal__item modal__item--active" data-modal-tab="1">--}}
+{{--                <input type="text" class="modal__input" placeholder="Улица и номер дома">--}}
+{{--                <div class="modal__map">--}}
+{{--                    <img src="{{asset('assets/images/map.jpg')}}" alt="map">--}}
+{{--                </div>--}}
+{{--                <div class="modal__bottom">--}}
+{{--                    <div class="modal__search">--}}
+{{--                        <p class="modal__search-label">Радиус поиска, км</p>--}}
+{{--                        <div class="modal__search-btns">--}}
+{{--                            <label class="modal__search-km">--}}
+{{--                                <input type="radio" name="radius" value="1">--}}
+{{--                                <span>1</span>--}}
+{{--                            </label>--}}
+{{--                            <label class="modal__search-km">--}}
+{{--                                <input type="radio" name="radius" value="2">--}}
+{{--                                <span>2</span>--}}
+{{--                            </label>--}}
+{{--                            <label class="modal__search-km">--}}
+{{--                                <input type="radio" name="radius" value="3">--}}
+{{--                                <span>3</span>--}}
+{{--                            </label>--}}
+{{--                            <label class="modal__search-km">--}}
+{{--                                <input type="radio" name="radius" value="5">--}}
+{{--                                <span>5</span>--}}
+{{--                            </label>--}}
+{{--                            <label class="modal__search-km">--}}
+{{--                                <input type="radio" name="radius" value="10">--}}
+{{--                                <span>10</span>--}}
+{{--                            </label>--}}
+{{--                            <label class="modal__search-km">--}}
+{{--                                <input type="radio" name="radius" value="15">--}}
+{{--                                <span>15</span>--}}
+{{--                            </label>--}}
+{{--                            <label class="modal__search-km">--}}
+{{--                                <input type="radio" name="radius" value="25">--}}
+{{--                                <span>25</span>--}}
+{{--                            </label>--}}
+{{--                            <label class="modal__search-km">--}}
+{{--                                <input type="radio" name="radius" value="50">--}}
+{{--                                <span>50</span>--}}
+{{--                            </label>--}}
+{{--                            <label class="modal__search-km">--}}
+{{--                                <input type="radio" name="radius" value="100">--}}
+{{--                                <span>100</span>--}}
+{{--                            </label>--}}
+{{--                            <label class="modal__search-km">--}}
+{{--                                <input type="radio" name="radius" value="150">--}}
+{{--                                <span>150</span>--}}
+{{--                            </label>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <button class="btn">Показать</button>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="modal__item" data-modal-tab="2">--}}
+{{--                <div class="modal__checkboxes">--}}
+{{--                    <label class="modal__checkbox">--}}
+{{--                        <input type="checkbox" name="rayon" value="1">--}}
+{{--                        <span>Кировский</span>--}}
+{{--                    </label>--}}
+{{--                    <label class="modal__checkbox">--}}
+{{--                        <input type="checkbox" name="rayon" value="1">--}}
+{{--                        <span>Кировский</span>--}}
+{{--                    </label>--}}
+{{--                    <label class="modal__checkbox">--}}
+{{--                        <input type="checkbox" name="rayon" value="1">--}}
+{{--                        <span>Кировский</span>--}}
+{{--                    </label>--}}
+{{--                    <label class="modal__checkbox">--}}
+{{--                        <input type="checkbox" name="rayon" value="1">--}}
+{{--                        <span>Кировский</span>--}}
+{{--                    </label>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--    <div class="modal__overlay"></div>--}}
+{{--</div>--}}
 <div class="modal" id="modal-city">
     <div class="modal__content">
         <button class="modal__close">
@@ -333,20 +321,20 @@
                     <div class="modal__form-phone">
                         <div class="modal__form-select">
                             <div class="modal__form-select__current">
-                                <img src="images/icons/flag/ru.svg" alt="ru">
+                                <img src="{{asset('assets/images/icons/flag/ru.svg')}}" alt="ru">
                                 <span>+7</span>
                             </div>
                             <ul class="modal__form-select__list">
                                 <li data-country="ru" data-mask="+7">
-                                    <img src="images/icons/flag/ru.svg" alt="ru">
+                                    <img src="{{asset('assets/images/icons/flag/ru.svg')}}" alt="ru">
                                     Russian
                                 </li>
                                 <li data-country="ua" data-mask="+38">
-                                    <img src="images/icons/flag/ua.svg" alt="ua">
+                                    <img src="{{asset('assets/images/icons/flag/ua.svg')}}" alt="ua">
                                     Ukraine
                                 </li>
                                 <li data-country="tr" data-mask="+90">
-                                    <img src="images/icons/flag/tr.svg" alt="tr">
+                                    <img src="{{asset('assets/images/icons/flag/tr.svg')}}" alt="tr">
                                     Turkey
                                 </li>
                             </ul>

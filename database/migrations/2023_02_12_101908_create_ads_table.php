@@ -21,7 +21,8 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->float('price', 8, 2);
             $table->string('address')->nullable();
-            $table->enum('communication', ['tel_and_mes', 'tel']);
+            $table->string('phone');
+            $table->enum('communication', ['tel_and_mes', 'tel', 'mes']);
             $table->boolean('active')->default(false);
             $table->string('slug');
             $table->timestamps();

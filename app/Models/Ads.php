@@ -19,11 +19,22 @@ class Ads extends Model
         'address',
         'communication',
         'active',
-        'slug'
+        'slug',
+        'phone'
         ];
 
     public function getRouteKeyName()
     {
         return 'slug';
+    }
+
+    public function images()
+    {
+        return $this->hasMany(Gallery::class);
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
     }
 }
