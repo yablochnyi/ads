@@ -125,11 +125,11 @@
                 <div class="cards">
                     @foreach($ads as $ad)
                     <div class="card">
-                        <a href="{{route('ads', $ad)}}" class="card__image">
+                        <a href="{{route('ads',['category' => $ad->category, 'ads' => $ad])}}" class="card__image">
                             <img src="{{ asset('storage/ads/' . optional($ad->images->first())->image) }}" alt="{{$ad->title}}">
                         </a>
                         <div class="card__body">
-                            <a href="{{route('ads', $ad)}}" class="card__title">{{$ad->title}}</a>
+                            <a href="{{route('ads', ['category' => $ad->category, 'ads' => $ad])}}" class="card__title">{{$ad->title}}</a>
                             <p class="card__price">{{$ad->price}} ₽</p>
                             <p class="card__city">Санкт-Петербург</p>
                             <p class="card__time">{{$ad->created_at->diffForHumans()}}</p>

@@ -14,7 +14,7 @@
                         <img src="{{ asset('storage/ads/' . optional($ads->images->first())->image) }}" alt="{{ $ads->title }}">
                     </a>
                     <div class="products__item-info">
-                        <a href="{{route('ads', $ads)}}" class="products__item-title">{{$ads->title}}</a>
+                        <a href="{{route('ads', ['category' => $ad->category, 'ads' => $ads])}}" class="products__item-title">{{$ads->title}}</a>
                         <p class="products__item-price">{{$ads->price}} ₽</p>
                         <p class="products__item-address">{{$ads->address}}</p>
                     </div>

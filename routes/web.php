@@ -25,5 +25,5 @@ Route::middleware(['auth'])->group(function () {
 
 Route::get('/category/{category}', \App\Http\Livewire\Category::class)->name('category');
 Route::get('/search', \App\Http\Livewire\Search::class)->name('search.ads');
-Route::get('/ads/{ads}', \App\Http\Livewire\Ads::class)->name('ads');
+Route::get('/{category}/{ads}', \App\Http\Livewire\Ads::class)->name('ads');
 
